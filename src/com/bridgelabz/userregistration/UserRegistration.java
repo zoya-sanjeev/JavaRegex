@@ -17,6 +17,11 @@ public class UserRegistration {
 		if(!nameValidation(firstName))
 			System.out.println("Invalid format");
 		
+		System.out.println("Enter Last name");
+		String lastName=scanner.next();
+		if(!nameValidation(lastName))
+			System.out.println("Invalid format");
+		
 
 	}
 
