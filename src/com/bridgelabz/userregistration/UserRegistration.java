@@ -12,9 +12,9 @@ public class UserRegistration {
 	public static void main(String[] args) {
 		Scanner scanner=new Scanner(System.in);
 		
-		System.out.println("Enter name");
-		String name=scanner.next();
-		if(!nameValidation(name))
+		System.out.println("Enter First name");
+		String firstName=scanner.next();
+		if(!nameValidation(firstName))
 			System.out.println("Invalid format");
 		
 
