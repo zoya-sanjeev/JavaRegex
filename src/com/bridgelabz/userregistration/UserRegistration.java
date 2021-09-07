@@ -8,20 +8,34 @@ public class UserRegistration {
 		String nameValidation="^[A-Z][a-z]{2,}$";
 		return Pattern.matches(nameValidation, name);
 	}
+	
+	public static boolean emailValidation(String email) {
+		String emailValidation="abc(\\.[a-z]+)?\\@bl\\.co(\\.in)?";
+		return Pattern.matches(emailValidation,email);
+	}
 
 	public static void main(String[] args) {
 		Scanner scanner=new Scanner(System.in);
 		
 		System.out.println("Enter First name");
 		String firstName=scanner.next();
-		if(!nameValidation(firstName))
-			System.out.println("Invalid format");
+		while(!nameValidation(firstName)) {
+			System.out.println("Invalid format. Enter again");
+			firstName=scanner.next();
+		}
 		
 		System.out.println("Enter Last name");
 		String lastName=scanner.next();
-		if(!nameValidation(lastName))
-			System.out.println("Invalid format");
-		
+		while(!nameValidation(lastName)) {
+			System.out.println("Invalid format.Enter again");
+			lastName=scanner.next();
+		}
+		System.out.println("Enter email");
+		String email=scanner.next();
+		while(!emailValidation(email)) {
+			System.out.println("Invalid format. Enter again");
+			email=scanner.next();
+		}
 
 	}
 
