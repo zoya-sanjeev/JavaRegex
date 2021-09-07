@@ -13,6 +13,11 @@ public class UserRegistration {
 		String emailValidation="abc(\\.[a-z]+)?\\@bl\\.co(\\.in)?";
 		return Pattern.matches(emailValidation,email);
 	}
+	
+	public static boolean phoneValidation(String phoneNumber) {
+		String phoneValidation="91\\s[0-9]{10}";
+		return Pattern.matches(phoneValidation,phoneNumber);
+	}
 
 	public static void main(String[] args) {
 		Scanner scanner=new Scanner(System.in);
@@ -36,7 +41,15 @@ public class UserRegistration {
 			System.out.println("Invalid format. Enter again");
 			email=scanner.next();
 		}
+		System.out.println("Enter phone number");
+		String phoneNumber=scanner.next();
+		while(!phoneValidation(phoneNumber)) {
+			System.out.println("Invalid format. Enter again");
+			phoneNumber=scanner.next();
+		}
 
 	}
+
+	
 
 }
