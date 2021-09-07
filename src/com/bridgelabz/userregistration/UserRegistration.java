@@ -18,6 +18,11 @@ public class UserRegistration {
 		String phoneValidation="91\\s[0-9]{10}";
 		return Pattern.matches(phoneValidation,phoneNumber);
 	}
+	
+	public static boolean passwordValidation(String password) {
+		String passwordValidation="[a-zA-Z]{8,}";
+		return Pattern.matches(passwordValidation,password);
+	}
 
 	public static void main(String[] args) {
 		Scanner scanner=new Scanner(System.in);
@@ -47,8 +52,18 @@ public class UserRegistration {
 			System.out.println("Invalid format. Enter again");
 			phoneNumber=scanner.next();
 		}
+		
+		System.out.println("Enter password");
+		String password=scanner.next();
+		while(!passwordValidation(password)) {
+			System.out.println("Invalid format. Enter again");
+			password=scanner.next();
+			
+		}
 
 	}
+
+	 
 
 	
 
