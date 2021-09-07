@@ -20,7 +20,7 @@ public class UserRegistration {
 	}
 	
 	public static boolean passwordValidation(String password) {
-		String passwordValidation="(?=.*[0-9])(?=.*[A-Z])[a-zA-Z]{8,}";
+		String passwordValidation="^.*(?=.{8,})(?=..*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=]).*$";
 		return Pattern.matches(passwordValidation,password);
 	}
 
